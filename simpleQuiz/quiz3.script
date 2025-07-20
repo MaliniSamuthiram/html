@@ -1,0 +1,104 @@
+const questions = [
+  {
+    question: "What is the national sport of Japan?",
+    options: ["Karate", "Sumo", "Kendo", "Judo"],
+    answer: "Sumo"
+  },
+  {
+    question: "What’s the only food that never spoils?",
+    options: ["Rice", "Honey", "Salt", "Sugar"],
+    answer: "Honey"
+  },
+  {
+    question: "What’s the largest organ in the human body?",
+    options: ["Liver", "Lungs", "Skin", "Brain"],
+    answer: "Skin"
+  },
+  {
+    question: "Which planet is known as the “Red Planet”?",
+    options: ["Venus", "Mars", "Jupiter", "Saturn"],
+    answer: "Mars"
+  },
+  {
+    question: "Which vitamin is most commonly found in citrus fruits?",
+    options: ["Vitamin A", "Vitamin E", "Vitamin D", "Vitamin C"],
+    answer: "Vitamin C"
+  },
+  {
+    question: "Which language has the most native speakers worldwide?",
+    options: ["English", "Madarin-Chinese", "Hindi", "Spanish"],
+    answer: "Mandarin-Chinese"
+  },
+  {
+    question: "What do we call animals that eat only plants?",
+    options: ["Carnivores", "Omnivores", "Herbivores", "Insectivores"],
+    answer: "Herbivores"
+  },
+  {
+    question: "Which drink is made from fermented grapes?",
+    options: ["Wine", "Beer", "Juice", "Rum"],
+    answer: "Wine"
+  },
+  {
+    question: "Which country is known for the maple leaf symbol?",
+    options: ["Brazil", "US", "Switzerland", "Canada"],
+    answer: "Canada"
+  },
+  {
+    question: "Christopher Columbus was trying to find India when he discovered America.",
+    options: ["True", "False"],
+    answer: "True"
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+const questionEl = document.getElementById("question");
+const optionsEl = document.getElementById("options");
+const nextBtn = document.getElementById("next-btn");
+const scoreEl = document.getElementById("score");
+
+function showQuestion() {
+  const q = questions[currentQuestion];
+  questionEl.textContent = q.question;
+  optionsEl.innerHTML = "";
+
+  q.options.forEach(option => {
+    const btn = document.createElement("button");
+    btn.textContent = option;
+    btn.onclick = () => checkAnswer(option);
+    optionsEl.appendChild(btn);
+  });
+}
+
+function checkAnswer(selected) {
+  const correct = questions[currentQuestion].answer;
+  if (selected === correct) {
+    score++;
+  }
+
+  currentQuestion++;
+
+  if (currentQuestion < questions.length) {
+    showQuestion();
+  } else {
+    showScore();
+  }
+}
+
+function showScore() {
+  questionEl.classList.add("hidden");
+  optionsEl.classList.add("hidden");
+  nextBtn.classList.add("hidden");
+  scoreEl.classList.remove("hidden");
+  scoreEl.textContent = `You scored ${score} out of ${questions.length}`;
+}
+
+nextBtn.onclick = () => {
+  showQuestion();
+  nextBtn.classList.add("hidden");
+};
+
+showQuestion();
+

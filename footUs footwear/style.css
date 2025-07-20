@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #999;
+}
+
+.hero {
+  width: 100%;
+  height: 70vh;
+  background: url('images/110.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  border-bottom: 2px solid #c4c4c4;
+  display: inline-block;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.product {
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product p {
+  margin-top: 0.5rem;
+}
+
+.highlight {
+  width: 100%;
+  height: 60vh;
+  background: url('images/111.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.highlight h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+.view-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.section info{
+     display: grid;
+    grid-template-rows: repeat(2,1fr);
+    gap: 20px;
+    flex: 1;
+  min-width: 300px;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.info-img {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.info-img img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.info-text {
+  flex: 2;
+}
+
+footer {
+  background: #f5f5f5;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 2rem;
+}
+
+.footer-columns div {
+  flex: 1;
+  min-width: 150px;
+  margin: 1rem 0;
+}
+
+.footer-columns h4 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-columns p {
+  font-size: 0.85rem;
+  color: #555;
+}
